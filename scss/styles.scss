@@ -1,0 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+
+@import "utilities/index";
+@import "base/index";
+
+body {
+  background-color: $background-color;
+}

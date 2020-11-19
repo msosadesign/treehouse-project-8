@@ -1,0 +1,6 @@
+@mixin font-setup($size, $weight, $color: $body-color, $stack: $main-font-stack) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  font-family: $stack;
+}

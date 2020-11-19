@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span {
+  font-family: $main-font-stack;
+}
+
+h1 {
+  @include font-setup(18px, $font-bold);
+  text-transform: uppercase;
+}
+
+h2 {
+  @include font-setup(18px, $font-bold, $name-color);
+}
+
+a,
+p {
+  @include font-setup(16px, $font-regular);
+}
+
+a {
+  text-decoration: none;
+}
