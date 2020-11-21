@@ -41,5 +41,11 @@
     word-wrap: break-word;
     background-color: #ffffff;
     width: 100%;
+    transition: background-color .2s ease-out, box-shadow .5s ease-out;
   }
   
+.user-card:hover {
+  background-color: #fafafa;
+  box-shadow: 1px 1px 3px rgba($color: #000000, $alpha: .1);
+  cursor: pointer;
+}
