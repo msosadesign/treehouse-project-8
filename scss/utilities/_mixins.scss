@@ -4,3 +4,9 @@
   color: $color;
   font-family: $stack;
 }
+
+@mixin mq($break) {
+  @media (min-width: $break) {
+    @content;
+  }
+}

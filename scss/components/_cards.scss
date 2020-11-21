@@ -1,0 +1,45 @@
+.user-card > img {
+    grid-area: photo;
+    height: 100%;
+    border-radius: 100%;
+  }
+  
+  .user-card > h2 {
+    grid-area: name;
+    margin: 0;
+  }
+  
+  .user-card > a {
+    grid-area: email;
+    margin: 0;
+  }
+  
+  .user-card > p {
+    grid-area: location;
+    margin: 0;
+  }
+  
+
+  $img-extra-size: 8px; // Defines how much the profile picture goes from the beginning of the name and the edge of the card
+
+  .user-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 5px;
+    grid-template-rows: $img-extra-size repeat(3, auto) $img-extra-size;
+    grid-template-areas:
+      "photo ."
+      "photo name"
+      "photo email"
+      "photo location"
+      "photo .";
+
+    border: 2px solid $outline-color;
+    border-radius: 6px;
+    padding: 15px;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    width: 100%;
+  }
+  

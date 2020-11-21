@@ -13,17 +13,17 @@ span {
 }
 
 h1 {
-  @include font-setup(18px, $font-bold);
+  @include font-setup(16px, $font-bold);
   text-transform: uppercase;
 }
 
 h2 {
-  @include font-setup(18px, $font-bold, $name-color);
+  @include font-setup(16px, $font-bold, $name-color);
 }
 
 a,
 p {
-  @include font-setup(16px, $font-regular);
+  @include font-setup(14px, $font-regular);
 }
 
 a {

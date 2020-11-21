@@ -1,0 +1,27 @@
+.wrapper {
+  padding-left: 1em;
+  padding-right: 1em;
+  @include mq($break-xl) {
+    margin: 0 auto;
+    width: 950px;
+  }
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+  grid-column-gap: 25px;
+  grid-row-gap: 20px;
+  @include mq($break-sm) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include mq($break-lg) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+#main-heading {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
