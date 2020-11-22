@@ -1,12 +1,31 @@
-@mixin font-setup($size, $weight, $color: $body-color, $stack: $main-font-stack) {
+@mixin font-setup(
+  $size,
+  $weight,
+  $color: $body-color,
+  $stack: $main-font-stack
+) {
   font-size: $size;
   font-weight: $weight;
   color: $color;
   font-family: $stack;
+  @content;
 }
 
 @mixin mq($break) {
   @media (min-width: $break) {
     @content;
   }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @content;
+}
+
+@mixin remove-button-style {
+  outline: none;
+  border: none;
+  background-color: transparent;
 }

@@ -8,6 +8,7 @@ h5,
 h6,
 p,
 a,
+address,
 span {
   font-family: $main-font-stack;
 }
@@ -22,10 +23,15 @@ h2 {
 }
 
 a,
+address,
 p {
   @include font-setup(14px, $font-regular);
 }
 
 a {
   text-decoration: none;
+}
+
+address {
+  font-style: normal;
 }

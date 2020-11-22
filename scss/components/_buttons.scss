@@ -1,0 +1,30 @@
+.remove-button-style {
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.popup-button {
+    @extend .remove-button-style;
+    @include font-setup(40px, $font-bold, $outline-color);
+    @include mq($break-lg) {
+      @include font-setup(25px, $font-bold, $outline-color);
+    }
+    @include flex-center;
+
+    align-self: flex-end;
+    width: 30px;
+    height: 30px;
+    transition: background-color 0.2s ease-out, color 0.2s ease-out;
+
+    &:hover {
+      cursor: pointer;
+      color: $name-color;
+      border-radius: 100%;
+      background-color: $hover-color;
+    }
+
+    &:active {
+      background-color: $click-color;
+    }
+}

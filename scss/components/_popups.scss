@@ -1,0 +1,40 @@
+#modal {
+  @include flex-center;
+  position: fixed;
+  background-color: rgba($color: #000000, $alpha: 0.2);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+}
+
+.popup {
+  @extend .card-style;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+
+  @include mq($break-sm) {
+    width: 370px;
+    padding: 25px;
+  }
+
+  & > img {
+    border-radius: 100%;
+  }
+
+  & > hr {
+    width: 100%;
+    border: 1px solid $outline-color;
+  }
+
+  & > #close-overlay {
+    @extend .popup-button;
+  }
+}

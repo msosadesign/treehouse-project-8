@@ -10,6 +10,16 @@ $name-color: #333;
 
 $outline-color: #dfdfdf;
 $background-color: #fcfcfc;
+$hover-color: #fafafa;
+$click-color: #ebebeb;
+
+// Extend classes
+
+.card-style {
+  border: 2px solid $outline-color;
+  background-color: #fff;
+  border-radius: 6px;
+}
 
 // Breakpoints
 $break-sm: 576px;
