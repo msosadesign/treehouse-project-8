@@ -1,5 +1,6 @@
 const randomUsersUrl =
   "https://randomuser.me/api/?results=12&nat=us,gb,es&inc=name,email,location,cell,dob,picture";
+const gridContainer = document.getElementsByClassName("grid-layout")[0];
 
 function checkStatus(res) {
   if (res.ok) {
@@ -38,8 +39,13 @@ function insertUsers(data) {
     <p>${city}</p>
     `;
 
-    document.getElementsByClassName("grid-layout")[0].appendChild(article);
+    gridContainer.appendChild(article);
   });
 }
 
-fetchData(randomUsersUrl).then(insertUsers);
+fetchData(randomUsersUrl)
+  .then(insertUsers)
+  .catch((err) => {
+    gridContainer.innerHTML = `<h2>Error fetching users, please reload the page.</h2>`;
+    gridContainer.style.display = "block";
+  });

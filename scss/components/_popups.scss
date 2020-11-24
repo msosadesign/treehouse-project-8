@@ -1,6 +1,6 @@
 #modal {
   @include flex-center;
-  display: none;
+  // display: block; // block
   position: fixed;
   background-color: rgba($color: #000000, $alpha: 0.2);
   width: 100%;
@@ -13,9 +13,13 @@
   overflow: auto;
 }
 
+$popup-button-padding: 10px; // distance from popup border to arrow button
+
 .popup {
   @extend .card-style;
-  display: none;
+  position: fixed;
+  z-index: 2;
+  display: flex; // Flex
   padding: 20px;
   flex-direction: column;
   align-items: center;
@@ -35,7 +39,29 @@
     border: 1px solid $outline-color;
   }
 
-  & > #close-overlay {
+  & > #close-overlay,
+  & > #change-left,
+  & > #change-right {
     @extend .popup-button;
   }
+
+  & > #close-overlay {
+    align-self: flex-end;
+  }
+
+  & > #change-left,
+  & > #change-right {
+    position: absolute;
+    z-index: 3;
+    top: 40%;
+  }
+
+  & > #change-left {
+    left: $popup-button-padding;
+  }
+
+  & > #change-right {
+    right: $popup-button-padding;
+  }
 }
+
