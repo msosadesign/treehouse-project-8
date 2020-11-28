@@ -53,15 +53,37 @@ function getUsers(data) {
 function switchUser(users, toLeft) {
   const name = document.getElementById("popup-name").textContent;
   const i = users.findIndex((user) => user.name == name);
+  const previousUser = users[i - 1];
+  const nextUser = users[i + 1];
+
   if (toLeft) {
-    if (users[i - 1]) {
-      updatePopup(users[i - 1]);
-      if (users[i - 1] === 0) {
-        changeLeft.remove();
+    if (previousUser) {
+      updatePopup(previousUser);
+
+      // Shows button when previous user is available
+      if (users[i]) {
+        changeRight.style.display = "flex";
       }
     }
+
+    // Removes button when reaching limit
+    if (!users[i - 2]) {
+      changeLeft.style.display = "none";
+    }
   } else if (!toLeft) {
-    updatePopup(users[i + 1]);
+    if (nextUser) {
+      updatePopup(nextUser);
+
+      // Shows button when previous user is available
+      if (users[i]) {
+        changeLeft.style.display = "flex";
+      }
+    }
+
+    // Removes button when reaching limit
+    if (!users[i + 2]) {
+      changeRight.style.display = "none";
+    }
   }
 }
 
@@ -95,6 +117,7 @@ function insertUsers(data) {
   data.forEach((user) => {
     const card = document.createElement("article");
     card.className = "user-card";
+    let i = 0;
 
     card.innerHTML = `
     <img
@@ -109,7 +132,18 @@ function insertUsers(data) {
     gridContainer.appendChild(card);
 
     // Add event listener to open popup
-    card.addEventListener("click", () => openPopup(user));
+    card.addEventListener("click", () => {
+      // If the cards are limits, hide change buttons
+      if (data.indexOf(user) == 0) {
+        changeLeft.style.display = "none";
+      }
+
+      if (data.indexOf(user) == data.length - 1) {
+        changeRight.style.display = "none";
+      }
+
+      openPopup(user);
+    });
   });
   return data;
 }
