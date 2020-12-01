@@ -5,6 +5,7 @@ const modal = document.getElementById("modal");
 const closeOverlayButton = document.getElementById("close-overlay");
 const changeRight = document.getElementById("change-right");
 const changeLeft = document.getElementById("change-left");
+const searchUser = document.getElementById("search-user");
 
 class Person {
   constructor(name, email, city, phone, address, birthday, img) {
@@ -40,7 +41,7 @@ function getUsers(data) {
     const email = userObj.email;
     const city = userObj.location.city;
     const phone = userObj.cell;
-    const address = `${userObj.location.street.number} ${userObj.location.street.name}, ${userObj.location.postcode}`;
+    const address = `${userObj.location.street.number} ${userObj.location.street.name}, ${userObj.location.state} ${userObj.location.postcode}`;
     const birthday = new Date(userObj.dob.date);
     const img = userObj.picture.large;
     const user = new Person(name, email, city, phone, address, birthday, img);
@@ -74,7 +75,7 @@ function switchUser(users, toLeft) {
     if (nextUser) {
       updatePopup(nextUser);
 
-      // Shows button when previous user is available
+      // Shows button when next user is available
       if (users[i]) {
         changeLeft.style.display = "flex";
       }
@@ -149,6 +150,29 @@ function insertUsers(data) {
 }
 
 // Event Listeners
+
+searchUser.addEventListener("input", (e) => {
+  const input = e.target.value;
+  const cards = document.getElementsByClassName("user-card");
+
+  // Helps refreshing the list when any input occurs
+  for (let i = 0; i < cards.length; i++) {
+    const card = cards[i];
+    card.style.display = "grid";
+  }
+
+  // If input inserted matches any name, otherwise hide it
+  for (let i = 0; i < cards.length; i++) {
+    const card = cards[i];
+    const name = card.getElementsByTagName("h2")[0].textContent;
+    if (
+      input.slice(0, input.length).toLowerCase() !==
+      name.slice(0, input.length).toLowerCase()
+    ) {
+      card.style.display = "none";
+    }
+  }
+});
 
 // Close overlay
 

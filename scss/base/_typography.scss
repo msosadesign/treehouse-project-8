@@ -8,6 +8,7 @@ h5,
 h6,
 p,
 a,
+input,
 address,
 span {
   font-family: $main-font-stack;
@@ -34,4 +35,5 @@ a {
 
 address {
   font-style: normal;
+  text-align: center;
 }

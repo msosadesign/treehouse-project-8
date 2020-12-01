@@ -1,9 +1,15 @@
 .wrapper {
   padding-left: 1em;
   padding-right: 1em;
+  margin-top: 1em;
+
+  @include mq($break-sm) {
+    margin-top: 30px;
+  }
+
   @include mq($break-xl) {
-    margin: 50px auto;
-    width: 1000px;
+    margin: 30px auto;
+    width: 1050px;
   }
 }
 
@@ -21,7 +27,25 @@
   }
 }
 
-#main-heading {
-  margin-top: 30px;
-  margin-bottom: 20px;
+.main-header {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 10px;
+
+  @include mq($break-sm) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: red;
+
+    & > #main-heading {
+      margin-bottom: 20px;
+      margin-right: auto;
+    }
+
+    & > #search-user {
+      height: 30px;
+    }
+  }
 }

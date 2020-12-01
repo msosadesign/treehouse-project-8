@@ -1,0 +1,8 @@
+.base-input {
+    @extend .card-style;
+    padding: 20px;
+}
+
+#search-user {
+  @extend .base-input;
+}
