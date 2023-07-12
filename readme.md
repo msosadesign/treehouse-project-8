@@ -1,11 +1,15 @@
 # Awesome Startup Employee Directory
 ## Treehouse Front End Development Techdegree
 
+An employee directory that uses an API to fetch all the info and make it usable.
+
+Link: https://msosadesign.github.io/treehouse-project-8/
+
 Technology used:
 * HTML/CSS
 * Javascript
 
-This is the eighth project in the Treehouse FEWP techdegree, it focuses on fetching data from an API and showing it asynchronously in a webpage. There's also some js array iteration methods used in the project.
+This is the eighth project in the Treehouse FEWP techdegree, it focuses on fetching data from an API and showing it asynchronously in a webpage. There's also some JS array iteration methods used in the project.
 
 I wrote the HTML and CSS to match the design as closely as possible:
 
