@@ -1,9 +1,8 @@
 # Awesome Startup Employee Directory
-## Treehouse Front End Development Techdegree
 
 An employee directory that uses an API to fetch all the info and make it usable.
 
-Link: https://msosadesign.github.io/treehouse-project-8/
+[Live Demo](https://msosadesign.github.io/treehouse-project-8/)
 
 Technology used:
 * HTML/CSS
